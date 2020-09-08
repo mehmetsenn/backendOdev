@@ -1,0 +1,69 @@
+﻿<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<p>
+    <a href="/HomeController/Logout">
+        <button type="button" class="btn btn-default btn-sm" style="float:right">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+    </a>
+</p>
+
+<br>
+
+<div class="row p-3">
+    <div class="card w-100 cardDashboard">
+        <div class="card-header" style="background-color:seagreen;border-color:white;padding:20px;color:whitesmoke"><h2 style="margin-bottom:5px;"><b>@ViewBag.User.Email</b></h2></div>
+        <div class="card-body dashboardCardBodies" style="font-size:18px;">
+            <p>Welcome @ViewBag.User.FirstName</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <h3 style="text-align:center">Online Users</h3>
+        @foreach (var User in ViewBag.OnlineUsers)
+        {
+            <p style="text-align:center">
+                @User.FirstName @User.LastName
+            </p>
+        }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <h3 style="text-align:center">Successfully Registered Users</h3>
+        @if (ViewBag.NewRegistiratedUsers != null)
+        {
+            @foreach (var RegisteredUser in ViewBag.NewRegistiratedUsers)
+            {
+                <p style="text-align:center">
+                    @RegisteredUser.FirstName @RegisteredUser.LastName
+                </p>
+            }
+        }
+        else
+        {
+            <p style="text-align:center">
+                -
+            </p>
+        }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <h3 style="text-align:center">Nonverified Users After 1 Day</h3>
+        @foreach (var NonVerifiedUser in ViewBag.NonVerifiedUsers)
+        {
+            <p style="text-align:center">
+                @NonVerifiedUser.FirstName @NonVerifiedUser.LastName
+            </p>
+        }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <h3 style="text-align:center">Login Process Duration Average (1 day)</h3>
+        <p style="text-align:center">
+            @ViewBag.LoginDuration Seconds
+
+        </p>
+    </div>
+</div>

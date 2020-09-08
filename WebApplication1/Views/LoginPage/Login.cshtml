@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+}
+
+<form asp-action="Login" asp-controller="LoginPageController" method="post">
+
+    @if (ViewBag.Message != null)
+    {
+        <p style="text-align:center">
+            @ViewBag.Message
+        </p>
+    }
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input name="email" type="email" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="E-mail" style="font-size:16px;">
+        </div>
+
+    </div>
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input name="password" type="password" class="form-control" id="Password" placeholder="Password" style="font-size:16px;">
+        </div>
+        <br />
+        <div class="col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+
+
+
+
+            <span style=" float:right;"><a style="color:black;" href="/ForgotPassword">Forgot Password?</a></span>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input type="submit" class="btn btn-primary btn-block" id="Login" value="Login" style="font-size:16px;">
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <span><a style="color:red;" href="/Register">Register</a></span>
+    </div>
+</form>
+
+

@@ -1,0 +1,13 @@
+At the beginning I decided to store hashed passwords so I used SHA256. 
+However for making it shorter I took first 20 character of hash.
+For registiration after users filled the required informations an activation code sent with an email.
+Also I added forgot the passwords link for users that are forgot their passwords. 
+If they click that link an email will be sent to them. 
+That email must have unique url so another user can't find with trying so I used activation code in password reset link. 
+Also new unique string can be generated.
+Another decision is making emails unique so every email can be registired for once. 
+In database, I stored all user information in one table named "User". 
+As an expansion one more table could be added name "Roles" that keeps users information for authorization.
+I arranged authorization with using cookies and set their expire time to 24 hours.
+Also I computed login time for each 24 hour in that way users need to login everyday.
+In testing scenarios for inputs if there is a required field is empty user will be informed for filling that fields.

@@ -1,0 +1,45 @@
+﻿@model WebApplication1.Models.DB.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form asp-action="Register" asp-controller="HomeController" method="post">
+
+    @if (ViewBag.Message != null)
+    {
+        <p style="text-align:center">
+            @ViewBag.Message
+        </p>
+    }
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input asp-for="FirstName" type="text" class="form-control" id="FirstName" placeholder="First Name" style="font-size:16px;">
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input asp-for="LastName" type="text" class="form-control" id="LastName" placeholder="Last Name" style="font-size:16px;">
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input asp-for="Email" type="email" class="form-control" id="Username" placeholder="E-mail" style="font-size:16px;">
+        </div>
+
+    </div>
+    <div class="row mt-3">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Password" style="font-size:16px;">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="form-group col-xl-8 col-lg-8 col-sm-12 col-xs-12 mx-auto">
+            <input type="submit" class="btn btn-primary btn-block" id="Register" value="Register" style="font-size:16px;">
+        </div>
+    </div>
+</form>
